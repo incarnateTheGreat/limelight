@@ -1,0 +1,53 @@
+// Use border-box for all elements.
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+// Disable MS's default "clear" button for all input fields.
+::-ms-clear {
+	display: none;
+	height: 0;
+	opacity: 0;
+	visibility: hidden;
+	width: 0;
+}
+
+// Enable font smoothing and legibility options for all content.
+html {
+	font-family: sans-serif;
+	text-rendering: optimizeLegibility;
+	-moz-osx-font-smoothing: grayscale;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+}
+
+body {
+	background-color: $white;
+	color: $black;
+	font-family: $font-main;
+	font-size: $font-size-base;
+	height: 100%;
+	margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  & > li {
+    margin: 0;
+    padding: 0;
+  }
+}
