@@ -15,14 +15,14 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 // Services
 import { LoginInfoService } from './services/login-info.service';
 import { UserService } from './services/user.service';
-import { HomeComponent } from './components/home/home.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AuthguardGuard } from './authguard.guard';
 import { NavComponent } from './components/nav/nav.component';
 
 // Routes
 const appRoutes: Routes = [
 	{ path: '', component: LoginComponent },
-	{ path: 'home', component: HomeComponent, canActivate: [AuthguardGuard] },
+	{ path: 'dashboard', component: DashboardComponent, canActivate: [AuthguardGuard] },
 	{ path: 'albums', component: AlbumsComponent, canActivate: [AuthguardGuard] },
 	{ path: 'posts', component: PostsComponent, canActivate: [AuthguardGuard] },
 	{ path: 'todos', component: TodosComponent, canActivate: [AuthguardGuard] },
@@ -36,7 +36,7 @@ const appRoutes: Routes = [
 		PostsComponent,
 		AlbumsComponent,
 		TodosComponent,
-		HomeComponent,
+		DashboardComponent,
 		NavComponent,
 		NotFoundComponent
 	],

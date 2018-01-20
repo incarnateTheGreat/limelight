@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
 			if (result) {
 				console.log(`login successful with ${result.name}`);
 				this.user.setUserLoggedIn();
-				this.router.navigate(['home']);
+				this.router.navigate(['dashboard']);
 			}
 
 		}, error => console.log("fail."));
