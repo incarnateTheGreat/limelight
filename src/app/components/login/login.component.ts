@@ -5,6 +5,7 @@ import _ from 'lodash';
 
 // Services
 import { LoginInfoService } from '../../services/login-info.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'component-login',
@@ -12,9 +13,10 @@ import { LoginInfoService } from '../../services/login-info.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-	username:string;
+	username:string = "Sincere@april.biz";
 
 	constructor(private loginDataService: LoginInfoService,
+							private user: UserService,
 							private router: Router) {}
 
   ngOnInit() {}
@@ -28,7 +30,8 @@ export class LoginComponent implements OnInit {
 
 			if (result) {
 				console.log(`login successful with ${result.name}`);
-				this.router.navigate(['posts']);
+				this.user.setUserLoggedIn();
+				this.router.navigate(['home']);
 			}
 
 		}, error => console.log("fail."));

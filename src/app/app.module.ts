@@ -10,16 +10,23 @@ import { LoginComponent } from './components/login/login.component';
 import { PostsComponent } from './components/posts/posts.component';
 import { AlbumsComponent } from './components/albums/albums.component';
 import { TodosComponent } from './components/todos/todos.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 // Services
 import { LoginInfoService } from './services/login-info.service';
+import { UserService } from './services/user.service';
+import { HomeComponent } from './components/home/home.component';
+import { AuthguardGuard } from './authguard.guard';
+import { NavComponent } from './components/nav/nav.component';
 
 // Routes
 const appRoutes: Routes = [
 	{ path: '', component: LoginComponent },
-	{ path: 'albums', component: AlbumsComponent },
-	{ path: 'posts', component: PostsComponent },
-	{ path: 'todos', component: TodosComponent }
+	{ path: 'home', component: HomeComponent, canActivate: [AuthguardGuard] },
+	{ path: 'albums', component: AlbumsComponent, canActivate: [AuthguardGuard] },
+	{ path: 'posts', component: PostsComponent, canActivate: [AuthguardGuard] },
+	{ path: 'todos', component: TodosComponent, canActivate: [AuthguardGuard] },
+	{ path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({
@@ -28,7 +35,10 @@ const appRoutes: Routes = [
 		LoginComponent,
 		PostsComponent,
 		AlbumsComponent,
-		TodosComponent
+		TodosComponent,
+		HomeComponent,
+		NavComponent,
+		NotFoundComponent
 	],
 	imports: [
 		BrowserModule,
@@ -36,7 +46,7 @@ const appRoutes: Routes = [
 		HttpModule,
 		RouterModule.forRoot(appRoutes)
 	],
-	providers: [LoginInfoService],
+	providers: [LoginInfoService, UserService, AuthguardGuard],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }

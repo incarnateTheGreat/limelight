@@ -1,7 +1,7 @@
-<div class="login">
+<div (submit)="login()">
 	<form>
 		<label for="username">Username</label>
 		<input type="text" name="username" [(ngModel)]="username" />
-		<button type="submit" (click)="login()">Login</button>
+		<button type="submit">Login</button>
 	</form>
 </div>

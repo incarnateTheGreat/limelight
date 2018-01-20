@@ -1,7 +1,13 @@
 <div class="container">
-	<!-- <nav>
-		<a routerLink="/albums" routerLinkActive="active">Albums</a>
-		<a routerLink="/posts" routerLinkActive="active">Posts</a>
-	</nav>-->
+	<header *ngIf="this.user.isUserLoggedIn">
+		header
+	</header>
+
+	<component-nav *ngIf="this.user.isUserLoggedIn"></component-nav>
+
 	<router-outlet></router-outlet>
+
+	<footer *ngIf="this.user.isUserLoggedIn">
+		footer
+	</footer>
 </div>
