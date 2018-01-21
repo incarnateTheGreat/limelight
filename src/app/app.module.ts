@@ -15,7 +15,8 @@ import { TodosComponent } from './components/todos/todos.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
 // Services
-import { LoginInfoService } from './services/login-info.service';
+import { GetLoginInfoService } from './services/get-login-info.service';
+import { GetPostsService } from './services/get-posts.service';
 import { UserService } from './services/user.service';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AuthguardGuard } from './authguard.guard';
@@ -59,7 +60,10 @@ const appRoutes: Routes = [
 			maxAge: 18
 		})
 	],
-	providers: [LoginInfoService, UserService, AuthguardGuard],
+	providers: [GetLoginInfoService,
+							GetPostsService,
+							UserService,
+							AuthguardGuard],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }

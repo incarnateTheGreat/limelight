@@ -11,7 +11,7 @@ interface UserInfo {
 }
 
 // Services
-import { LoginInfoService } from '../../services/login-info.service';
+import { GetLoginInfoService } from '../../services/get-login-info.service';
 import { UserService } from '../../services/user.service';
 
 @Component({
@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
 	username:string = "Sincere@april.biz";
 	userinfo: Observable<any>;
 
-	constructor(private loginDataService: LoginInfoService,
+	constructor(private loginDataService: GetLoginInfoService,
 							private user: UserService,
 							private store: Store<any>,
 							private router: Router) {
@@ -34,7 +34,8 @@ export class LoginComponent implements OnInit {
 
 	login() {
 		// Run service to the latest Currency Data.
-		this.loginDataService.getData('users').subscribe((data) => {
+		this.loginDataService.getData().subscribe((data) => {
+			console.log(data)
 			const result = data.find((user) => {
 				return user.email.toLowerCase() === this.username.toLowerCase();
 			});
