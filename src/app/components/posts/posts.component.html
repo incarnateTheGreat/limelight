@@ -1,3 +1,15 @@
-<p>
-  posts works!
-</p>
+<div class="posts">
+	<h2>Posts</h2>
+	<input type="search" placeholder="Search..." class="_posts__search" [(ngModel)]="search" />
+	<div class="_posts__post-container"
+			 *ngFor="let post of postDataArr | filter: search">
+		<div class="_posts_post-container__title-container"
+				 (click)="togglePostView($event.target)">
+			<span>{{post.title}}</span>
+			<span>({{post.numberOfComments}} Comments)</span>
+		</div>
+		<div class="_posts_post-container__body-container">
+			{{post.body}}
+		</div>
+	</div>
+</div>

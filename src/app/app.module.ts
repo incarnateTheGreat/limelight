@@ -17,15 +17,18 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 // Services
 import { GetLoginInfoService } from './services/get-login-info.service';
 import { GetPostsService } from './services/get-posts.service';
+import { GetCommentsService } from './services/get-comments.service';
 import { UserService } from './services/user.service';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AuthguardGuard } from './authguard.guard';
 import { NavComponent } from './components/nav/nav.component';
 import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
 
 // Reducers
 import { simpleReducer } from './reducers/simple.reducer';
+
+// Utils
+import { FilterPipe } from './pipe/filter.pipe';
 
 // Routes
 const appRoutes: Routes = [
@@ -48,7 +51,7 @@ const appRoutes: Routes = [
 		NavComponent,
 		NotFoundComponent,
 		HeaderComponent,
-		FooterComponent
+		FilterPipe
 	],
 	imports: [
 		BrowserModule,
@@ -62,6 +65,7 @@ const appRoutes: Routes = [
 	],
 	providers: [GetLoginInfoService,
 							GetPostsService,
+							GetCommentsService,
 							UserService,
 							AuthguardGuard],
 	bootstrap: [AppComponent]

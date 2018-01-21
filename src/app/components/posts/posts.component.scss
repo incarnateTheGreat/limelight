@@ -1,1 +1,48 @@
 @import "~sass/styles";
+
+.posts {
+	display: flex;
+	flex-direction: column;
+
+	h2 {
+		border-bottom: 1px solid $dark-grey;
+		padding: 10px 0 3px;
+	}
+
+	._posts__search {
+		align-self: flex-end;
+		display: flex;
+		margin: 20px 0;
+		width: 200px;
+	}
+
+	._posts__post-container {
+		border-width: 1px 1px 0 1px;
+		border-style: solid;
+		border-color: $black;
+
+		._posts_post-container__title-container {
+			background-color: $light-grey;
+			cursor: pointer;
+			padding: 10px 5px;
+
+			&:hover {
+				background-color: $dark-grey;
+			}
+
+			span {
+				&:last-child {
+					font-weight: bold;
+				}
+			}
+		}
+		._posts_post-container__body-container {
+			display: none;
+			padding: 10px;
+
+			&.-open {
+				display: block;
+			}
+		}
+	}
+}

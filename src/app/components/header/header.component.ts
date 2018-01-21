@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs/Observable';
 import _ from 'lodash';
 
 @Component({
@@ -10,7 +9,6 @@ import _ from 'lodash';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-	userinfo: Observable<any>;
 	username:string = "";
 	companyName:string = "";
 
