@@ -1,0 +1,16 @@
+@import "~sass/styles";
+
+nav {
+	display: flex;
+	height: 100%;
+
+	a {
+		align-items: center;
+		display: flex;
+		padding: 0 10px;
+
+		&:hover {
+			background-color: $light-grey;
+		}
+	}
+}

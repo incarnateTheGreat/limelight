@@ -1,0 +1,14 @@
+<header *ngIf="this.user.isUserLoggedIn">
+	<component-nav></component-nav>
+
+	<div class="_user-name-container">
+		<div class="_user-name-container__username">
+			<div>{{ username }}</div>
+			<div>({{ companyName }})</div>
+		</div>
+
+		<div class="_user-name-container__logout">
+			<a href="" title="Logout" alt="Logout" (click)="logout()">Logout</a>
+		</div>
+	</div>
+</header>

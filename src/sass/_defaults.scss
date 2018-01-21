@@ -24,6 +24,13 @@ html {
 	-webkit-font-smoothing: antialiased;
 }
 
+a {
+  cursor: pointer;
+  transition: all 0.1s ease;
+	text-decoration: none;
+	-webkit-tap-highlight-color: transparent;
+}
+
 body {
 	background-color: $white;
 	color: $black;

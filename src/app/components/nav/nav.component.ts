@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import { UserService } from '.,/../services/user.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'component-nav',
@@ -8,14 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-	// constructor(private user: UserService) {}
+	constructor(private user: UserService) {}
 
 	ngOnInit() {
 		// console.log('init nav', this.user);
-	}
-
-	ngOnChanges() {
-		console.log('hits')
 	}
 
 }

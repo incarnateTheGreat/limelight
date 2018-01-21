@@ -1,0 +1,33 @@
+@import "~sass/styles";
+
+header {
+	border: 1px solid $light-grey;
+	display: flex;
+	height: 30px;
+	justify-content: space-between;
+
+	._user-name-container {
+		display: flex;
+
+		._user-name-container__username {
+			align-items: center;
+			display: flex;
+			padding: 0 10px 0 0;
+
+			>:first-child {
+				padding: 0 10px 0 0;
+			}
+		}
+
+		._user-name-container__logout {
+			align-items: center;
+			border-left: 1px solid $light-grey;
+			display: flex;
+			padding: 0 10px;
+		}
+	}
+
+	&.-logged-in {
+		padding: 10px;
+	}
+}
