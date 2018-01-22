@@ -34,7 +34,7 @@ export class AlbumsComponent implements OnInit {
 					}
 				}
 			});
-		}, error => console.log("fail."));
+		}, error => console.log("Sorry. There was a problem with your request."));
   }
 
 	getNumberOfPhotos(photosData, albumId) {
