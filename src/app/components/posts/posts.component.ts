@@ -27,29 +27,27 @@ export class PostsComponent implements OnInit {
 
   ngOnInit() {
 		// TODO: Perhaps use Local Storage to prevent data reloads?
-		
-		this.postDataService.getData().subscribe((postData) => {
-			const postDataResult = postData.filter((o) => {
-				return o.userId === this.user.userData.name.id;
-			});
 
+		this.postDataService.getData(this.user.userData.name.id).subscribe((postData) => {
 			this.commentDataService.getData().subscribe((commentData) => {
-				const commentDataResult = commentData.filter((o) => {
-					return o.postId === 1;
-				});
-
-				if (postDataResult) {
-					for (let x in postDataResult) {
+				if (postData) {
+					for (let x in postData) {
 						this.postDataArr.push({
-							title: postDataResult[x].title,
-							body: postDataResult[x].body,
-							numberOfComments: Object.keys(commentDataResult).length
+							title: postData[x].title,
+							body: postData[x].body,
+							numberOfComments: this.getNumberOfComments(commentData, postData[x].id)
 						});
 					}
 				}
 			});
 		}, error => console.log("fail."));
   }
+
+	getNumberOfComments(commentData, postId) {
+		return _.size(_.filter(commentData, (comment) => {
+			return comment.postId === postId;
+		}));
+	}
 
 	togglePostView(e) {
 		const parent = e.parentNode,

@@ -21,6 +21,10 @@
 		border-style: solid;
 		border-color: $black;
 
+		&:last-child {
+			border-bottom: 1px solid $black;
+		}
+
 		._posts_post-container__title-container {
 			background-color: $light-grey;
 			cursor: pointer;

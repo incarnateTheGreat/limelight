@@ -9,6 +9,9 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 // Components
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { NavComponent } from './components/nav/nav.component';
+import { HeaderComponent } from './components/header/header.component';
 import { PostsComponent } from './components/posts/posts.component';
 import { AlbumsComponent } from './components/albums/albums.component';
 import { TodosComponent } from './components/todos/todos.component';
@@ -19,10 +22,8 @@ import { GetLoginInfoService } from './services/get-login-info.service';
 import { GetPostsService } from './services/get-posts.service';
 import { GetCommentsService } from './services/get-comments.service';
 import { UserService } from './services/user.service';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { GetAlbumsService } from './services/get-albums.service';
 import { AuthguardGuard } from './authguard.guard';
-import { NavComponent } from './components/nav/nav.component';
-import { HeaderComponent } from './components/header/header.component';
 
 // Reducers
 import { simpleReducer } from './reducers/simple.reducer';
@@ -66,6 +67,7 @@ const appRoutes: Routes = [
 	providers: [GetLoginInfoService,
 							GetPostsService,
 							GetCommentsService,
+							GetAlbumsService,
 							UserService,
 							AuthguardGuard],
 	bootstrap: [AppComponent]
