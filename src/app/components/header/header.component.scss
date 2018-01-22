@@ -1,7 +1,7 @@
 @import "~sass/styles";
 
 header {
-	border: 1px solid $light-grey;
+	border: 1px solid $dark-grey;
 	display: flex;
 	height: 30px;
 	justify-content: space-between;
@@ -21,7 +21,7 @@ header {
 
 		._user-name-container__logout {
 			align-items: center;
-			border-left: 1px solid $light-grey;
+			border-left: 1px solid $dark-grey;
 			display: flex;
 			padding: 0 10px;
 		}

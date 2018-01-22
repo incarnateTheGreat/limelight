@@ -1,17 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
 import _ from 'lodash';
 
 // Services
 import { UserService } from '../../services/user.service';
 import { GetPostsService } from '../../services/get-posts.service';
 import { GetCommentsService } from '../../services/get-comments.service';
-
-interface Post {
-	title: string,
-	body: string,
-	comments: number
-}
 
 @Component({
   selector: 'app-posts',
