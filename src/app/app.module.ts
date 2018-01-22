@@ -23,6 +23,7 @@ import { GetPostsService } from './services/get-posts.service';
 import { GetCommentsService } from './services/get-comments.service';
 import { UserService } from './services/user.service';
 import { GetAlbumsService } from './services/get-albums.service';
+import { GetPhotosService } from './services/get-photos.service';
 import { AuthguardGuard } from './authguard.guard';
 
 // Reducers
@@ -68,6 +69,7 @@ const appRoutes: Routes = [
 							GetPostsService,
 							GetCommentsService,
 							GetAlbumsService,
+							GetPhotosService,
 							UserService,
 							AuthguardGuard],
 	bootstrap: [AppComponent]

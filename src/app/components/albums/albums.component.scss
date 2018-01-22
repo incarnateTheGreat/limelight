@@ -1,1 +1,35 @@
 @import "~sass/styles";
+
+.albums {
+
+	h2 {
+		border-bottom: 1px solid $dark-grey;
+		padding: 10px 0 3px;
+	}
+
+	._albums__sort-container {
+		display: flex;
+		justify-content: flex-end;
+		padding: 10px 0;
+
+		span {
+			cursor: pointer;
+			padding: 0 5px;
+
+			&:last-child {
+				padding-right: 0;
+			}
+		}
+	}
+	._albums__container {
+		border: 1px solid $dark-grey;
+		box-shadow: 0 0 4px 0 rgba(155, 155, 155, 0.25);
+		padding: 5px 10px;
+
+		span {
+			&:first-child {
+				font-weight: bold;
+			}
+		}
+	}
+}

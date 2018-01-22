@@ -3,12 +3,12 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 @Injectable()
-export class GetAlbumsService {
+export class GetPhotosService {
 
-  constructor(private http: Http) {}
+	constructor(private http: Http) {}
 
-	getData(userId) {
-		const url = `https://jsonplaceholder.typicode.com/albums?userId=${userId}`;
+	getData() {
+		const url = 'https://jsonplaceholder.typicode.com/photos';
 
 		return this.http.get(url)
 			.map(res => res.json());

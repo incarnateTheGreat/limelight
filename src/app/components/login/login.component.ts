@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
 
 			if (result) {
 				this.user.setUserLoggedIn();
-				this.router.navigate(['posts']);
+				this.router.navigate(['albums']);
 
 				this.store.dispatch({
 					type: 'STORE_USER_DATA',

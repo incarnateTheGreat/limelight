@@ -24,11 +24,16 @@ html {
 	-webkit-font-smoothing: antialiased;
 }
 
-a {
+a, ._link {
+	color: $primary-blue;
   cursor: pointer;
   transition: all 0.1s ease;
 	text-decoration: none;
 	-webkit-tap-highlight-color: transparent;
+
+	&:hover {
+		color: $secondary-blue;
+	}
 }
 
 body {
