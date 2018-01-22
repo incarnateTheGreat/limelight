@@ -7,8 +7,10 @@
 		<span title="Sort Descending" (click)="sortAlbums('desc')">&#x25BC;</span>
 	</div>
 	<ul class="_albums__container">
-		<li *ngFor="let album of albumsDataArr">{{album.title}}
-			<span>({{album.numberOfPhotos}} Photos)</span>
+		<li *ngFor="let album of albumsDataArr">
+			<span>{{album.title}}
+				<span class="_albums_container__photoCount">({{album.numberOfPhotos}} Photos)</span>
+			</span>
 			<span class="_link" (click)="openAlbum(album.albumId, album.title)">View Photos</span>
 		</li>
 	</ul>

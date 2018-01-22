@@ -32,14 +32,14 @@ export class LoginComponent implements OnInit {
 
 			if (result) {
 				this.user.setUserLoggedIn();
-				this.router.navigate(['todos']);
+				this.router.navigate(['posts']);
 
 				this.store.dispatch({
 					type: 'STORE_USER_DATA',
 					data: result
 				});
 			}
-		}, error => console.log("fail."));
+		}, error => console.log("Sorry. There is a problem with your request."));
 	}
 
 }

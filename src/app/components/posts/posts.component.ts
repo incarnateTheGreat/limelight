@@ -40,7 +40,7 @@ export class PostsComponent implements OnInit {
 					}
 				}
 			});
-		}, error => console.log("fail."));
+		}, error => console.log("Sorry. There is a problem with your request."));
   }
 
 	getNumberOfComments(commentData, postId) {
