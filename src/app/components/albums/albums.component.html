@@ -1,14 +1,15 @@
 <div class="albums">
+	<component-modal #modal></component-modal>
 	<h2>Albums</h2>
 	<div class="_albums__sort-container">
-		sort arrows
+		Sort
 		<span title="Sort Ascending" (click)="sortAlbums('asc')">&#x25B2;</span>
 		<span title="Sort Descending" (click)="sortAlbums('desc')">&#x25BC;</span>
 	</div>
 	<ul class="_albums__container">
 		<li *ngFor="let album of albumsDataArr">{{album.title}}
 			<span>({{album.numberOfPhotos}} Photos)</span>
-			<span class="_link" (click)="openAlbum()">View Photos</span>
+			<span class="_link" (click)="openAlbum(album.albumId, album.title)">View Photos</span>
 		</li>
 	</ul>
 </div>

@@ -1,0 +1,14 @@
+<div class="modal" [ngClass]="{'-active': isModalOpen}">
+	<div class="_modal-container">
+		<header>
+			<h2>{{albumTitle}}</h2>
+			<span class="_modal-container__close" (click)="closeModal()">X</span>
+		</header>
+		<section>
+			<img src={{photo.thumbnailUrl}}
+					 alt="{{photo.title}}"
+					 title="{{photo.title}}"
+					 *ngFor="let photo of photos" />
+		</section>
+	</div>
+</div>

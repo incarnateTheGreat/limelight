@@ -16,6 +16,7 @@ import { PostsComponent } from './components/posts/posts.component';
 import { AlbumsComponent } from './components/albums/albums.component';
 import { TodosComponent } from './components/todos/todos.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 // Services
 import { GetLoginInfoService } from './services/get-login-info.service';
@@ -53,7 +54,8 @@ const appRoutes: Routes = [
 		NavComponent,
 		NotFoundComponent,
 		HeaderComponent,
-		FilterPipe
+		FilterPipe,
+		ModalComponent
 	],
 	imports: [
 		BrowserModule,

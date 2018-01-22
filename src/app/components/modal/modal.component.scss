@@ -1,0 +1,73 @@
+@import "~sass/styles";
+
+.modal {
+	background-color: rgba(0, 0, 0, 0.4);
+	display: none;
+	height: 100%;
+	left: 0;
+	overflow: auto;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1000;
+
+	&.-active {
+		display: flex;
+	}
+
+	._modal-container {
+		align-self: center;
+		background-color: $white;
+		border-radius: 2px;
+		display: flex;
+		flex-direction: column;
+		height: 85%;
+		margin: 0 auto;
+		overflow: hidden;
+		width: 750px;
+
+		header {
+			align-items: center;
+			border-bottom: 1px solid $light-grey;
+			display: flex;
+			justify-content: space-between;
+			padding: 20px 30px;
+
+			h2 {
+				font-weight: bold;
+			}
+
+			._modal-container__close {
+				cursor: pointer;
+				font-size: $font-size-medium;
+			}
+		}
+		section {
+	    display: flex;
+	    flex-direction: row;
+	    flex-wrap: wrap;
+			justify-content: space-between;
+			overflow-x: scroll;
+	    padding: 10px 0;
+
+			img {
+				flex-basis: calc(25% - 2px);
+				margin: 0 0 2px;
+
+				@include respond-to(sm-max) {
+					flex-basis: calc(33% - 2px);
+				}
+				@include respond-to(xs-max) {
+					flex-basis: calc(50% - 2px);
+				}
+			}
+		}
+
+		@include respond-to(sm-max) {
+			width: 550px;
+		}
+		@include respond-to(xs-max) {
+			width: 85%;
+		}
+	}
+}

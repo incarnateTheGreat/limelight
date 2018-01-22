@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import _ from 'lodash';
 
 // Services
@@ -14,6 +14,9 @@ import { GetPhotosService } from '../../services/get-photos.service';
 export class AlbumsComponent implements OnInit {
 	albumsDataArr:Array<any> = [];
 
+	// Channel child components.
+	@ViewChild('modal') modalChild;
+
   constructor(private albumsService: GetAlbumsService,
 							private photosService: GetPhotosService,
 							private user: UserService) { }
@@ -25,6 +28,7 @@ export class AlbumsComponent implements OnInit {
 					for (let x in albumsData) {
 						this.albumsDataArr.push({
 							title: albumsData[x].title,
+							albumId: albumsData[x].id,
 							numberOfPhotos: this.getNumberOfPhotos(photosData, albumsData[x].id)
 						});
 					}
@@ -39,8 +43,12 @@ export class AlbumsComponent implements OnInit {
 		}));
 	}
 
-	openAlbum() {
-		console.log('Open album.');
+	openAlbum(albumId, title) {
+		this.modalChild.isModalOpen = !this.modalChild.isModalOpen;
+
+		this.photosService.getData(albumId).subscribe((photosData) => {
+			this.modalChild.getContent(photosData, title);
+		});
 	}
 
 	sortAlbums(order) {

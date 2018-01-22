@@ -7,8 +7,14 @@ export class GetPhotosService {
 
 	constructor(private http: Http) {}
 
-	getData() {
-		const url = 'https://jsonplaceholder.typicode.com/photos';
+	getData(albumId?: Number) {
+		let url = '';
+
+		if (albumId === undefined) {
+			url = 'https://jsonplaceholder.typicode.com/photos';
+		} else {
+			url = `https://jsonplaceholder.typicode.com/photos?albumId=${albumId}`;
+		}
 
 		return this.http.get(url)
 			.map(res => res.json());
