@@ -4,6 +4,8 @@ import { Observable } from 'rxjs/Observable';
 import { UserService } from './services/user.service';
 import { Router } from '@angular/router';
 
+import * as constants from './constants/constants';
+
 @Injectable()
 export class AuthguardGuard implements CanActivate {
 	constructor(private user: UserService,
@@ -15,7 +17,6 @@ export class AuthguardGuard implements CanActivate {
 			if (this.user.getUserLoggedIn()) {
 			} else {
 				this.router.navigate(['/']);
-				console.log('TODO: prompt error message.');
 			}
 
 			return this.user.getUserLoggedIn();

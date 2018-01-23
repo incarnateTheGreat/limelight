@@ -19,13 +19,16 @@ export class LoginComponent implements OnInit {
 	username:string = '';
 	isError:boolean = false;
 	errorMessage:string = '';
+	isLoginRendered:boolean = false;
 
 	constructor(private loginDataService: GetLoginInfoService,
 							private user: UserService,
 							private store: Store<any>,
 							private router: Router) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+		this.isLoginRendered = true;
+	}
 
 	login() {
 		this.loginDataService.getData(this.username).subscribe((data) => {
@@ -53,5 +56,4 @@ export class LoginComponent implements OnInit {
 			this.errorMessage = constants.SERVICE_ERROR_MESSAGE;
 		});
 	}
-
 }

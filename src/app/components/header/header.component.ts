@@ -9,8 +9,9 @@ import _ from 'lodash';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-	username:string = "";
-	companyName:string = "";
+	loading:boolean = false;
+	username:string = '';
+	companyName:string = '';
 
   constructor(private user: UserService,
 							private store: Store<any>) {}
@@ -25,6 +26,7 @@ export class HeaderComponent implements OnInit {
 	}
 
 	logout() {
+		this.loading = true;
 		this.user.setUserLoggedOut();
 	}
 }
