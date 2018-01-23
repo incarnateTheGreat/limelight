@@ -17,6 +17,7 @@ import { AlbumsComponent } from './components/albums/albums.component';
 import { TodosComponent } from './components/todos/todos.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { LoadingModule } from 'ngx-loading';
 
 
 // Services
@@ -67,7 +68,8 @@ const appRoutes: Routes = [
 		StoreModule.forRoot({ userinfo: simpleReducer }),
 		StoreDevtoolsModule.instrument({
 			maxAge: 18
-		})
+		}),
+		LoadingModule
 	],
 	providers: [GetLoginInfoService,
 							GetPostsService,

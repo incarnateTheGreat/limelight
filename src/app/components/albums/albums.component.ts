@@ -12,6 +12,7 @@ import { GetPhotosService } from '../../services/get-photos.service';
   styleUrls: ['./albums.component.scss']
 })
 export class AlbumsComponent implements OnInit {
+	loading:boolean = false;
 	albumsDataArr:Array<any> = [];
 
 	// Channel child components.
@@ -22,6 +23,8 @@ export class AlbumsComponent implements OnInit {
 							private user: UserService) { }
 
   ngOnInit() {
+		this.loading = true;
+
 		this.albumsService.getData(this.user.userData.name.id).subscribe((albumsData) => {
 			this.photosService.getData().subscribe((photosData) => {
 				if (albumsData) {
@@ -33,6 +36,8 @@ export class AlbumsComponent implements OnInit {
 						});
 					}
 				}
+
+				this.loading = false;
 			});
 		}, error => console.log("Sorry. There was a problem with your request."));
   }

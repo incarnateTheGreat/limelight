@@ -1,4 +1,5 @@
 <div class="posts">
+	<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
 	<h2>Posts</h2>
 	<input type="search" placeholder="Search..." class="_posts__search" [(ngModel)]="search" />
 	<div class="_posts__post-container"

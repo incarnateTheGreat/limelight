@@ -11,6 +11,7 @@ import { GetTodosService } from '../../services/get-todos.service';
   styleUrls: ['./todos.component.scss']
 })
 export class TodosComponent implements OnInit {
+	loading:boolean = false;
 	todosDataArr:Array<any> = [];
 	checkedTodosArr:Array<number>;
 	displayCompleted:boolean = false;
@@ -19,8 +20,11 @@ export class TodosComponent implements OnInit {
 							private user: UserService) { }
 
   ngOnInit() {
+		this.loading = true;
+
 		this.todosService.getData(this.user.userData.name.id).subscribe((todosData) => {
 			this.todosDataArr = todosData;
+			this.loading = false;
 		});
 	}
 

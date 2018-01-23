@@ -12,6 +12,7 @@ import { GetCommentsService } from '../../services/get-comments.service';
   styleUrls: ['./posts.component.scss']
 })
 export class PostsComponent implements OnInit {
+	loading:boolean = false;
 	postDataArr:Array<any> = [];
 
   constructor(private postDataService: GetPostsService,
@@ -20,6 +21,8 @@ export class PostsComponent implements OnInit {
 
   ngOnInit() {
 		// TODO: Perhaps use Local Storage to prevent data reloads?
+
+		this.loading = true;
 
 		this.postDataService.getData(this.user.userData.name.id).subscribe((postData) => {
 			this.commentDataService.getData().subscribe((commentData) => {
@@ -32,6 +35,8 @@ export class PostsComponent implements OnInit {
 						});
 					}
 				}
+
+				this.loading = false;
 			});
 		}, error => console.log("Sorry. There is a problem with your request."));
   }
