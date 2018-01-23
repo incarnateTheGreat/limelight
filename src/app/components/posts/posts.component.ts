@@ -6,6 +6,8 @@ import { UserService } from '../../services/user.service';
 import { GetPostsService } from '../../services/get-posts.service';
 import { GetCommentsService } from '../../services/get-comments.service';
 
+import * as constants from '../../constants/constants';
+
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',
@@ -38,7 +40,7 @@ export class PostsComponent implements OnInit {
 
 				this.loading = false;
 			});
-		}, error => console.log("Sorry. There is a problem with your request."));
+		}, error => constants.SERVICE_ERROR_MESSAGE);
   }
 
 	getNumberOfComments(commentData, postId) {
