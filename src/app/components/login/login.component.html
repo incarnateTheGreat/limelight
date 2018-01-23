@@ -4,4 +4,5 @@
 		<input type="text" name="username" [(ngModel)]="username" />
 		<button type="submit">Login</button>
 	</form>
+	<div class="_login__error-message" [ngClass]="{'-error': isError}">{{errorMessage}}</div>
 </div>

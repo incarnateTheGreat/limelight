@@ -15,6 +15,8 @@ export class ModalComponent implements OnInit {
   ngOnInit() {}
 
 	closeModal() {
+		this.photos = [];
+		this.albumTitle = '';
 		this.isModalOpen = false;
 	}
 

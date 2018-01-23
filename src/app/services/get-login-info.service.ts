@@ -7,8 +7,8 @@ export class GetLoginInfoService {
 
   constructor(private http: Http) {}
 
-	getData() {
-		const url = 'https://jsonplaceholder.typicode.com/users';
+	getData(email) {
+		const url = `https://jsonplaceholder.typicode.com/users?email=${email}`;
 
 		return this.http.get(url)
 			.map(res => res.json());

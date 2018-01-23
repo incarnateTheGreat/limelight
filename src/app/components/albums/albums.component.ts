@@ -6,6 +6,8 @@ import { UserService } from '../../services/user.service';
 import { GetAlbumsService } from '../../services/get-albums.service';
 import { GetPhotosService } from '../../services/get-photos.service';
 
+import * as constants from '../../constants/constants';
+
 @Component({
   selector: 'app-albums',
   templateUrl: './albums.component.html',
@@ -39,7 +41,7 @@ export class AlbumsComponent implements OnInit {
 
 				this.loading = false;
 			});
-		}, error => console.log("Sorry. There was a problem with your request."));
+		}, error => constants.SERVICE_ERROR_MESSAGE);
   }
 
 	getNumberOfPhotos(photosData, albumId) {
